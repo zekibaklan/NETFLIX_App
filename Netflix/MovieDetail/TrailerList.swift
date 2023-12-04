@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct TrailerList: View {
+    
+    var trailers : [Trailer]
+    let screen = UIScreen.main.bounds
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ForEach(trailers) { trailer in
+                VStack(alignment : .leading) {
+                    VideoPreviewImage(imageURL: trailer.thumbnailImageURL, videoURL: trailer.videoURL)
+                        .frame(maxWidth: screen.width)
+                    Text(trailer.name)
+                        .font(.headline)
+                        
+                }
+                
+                .foregroundColor(.white)
+                .padding(.bottom,10)
+                
+                
+            }
+        }
     }
 }
 
 #Preview {
-    TrailerList()
+    ZStack {
+        Color.black
+            .edgesIgnoringSafeArea(.all)
+        TrailerList(trailers: exampleTrailers)
+    }
 }

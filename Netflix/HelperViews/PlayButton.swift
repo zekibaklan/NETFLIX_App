@@ -30,8 +30,8 @@ struct PlayButton: View {
                 Spacer()
             }
             .padding(.vertical,6)
-            .background(backgroundColor == .white ? .black : .white)
-            .foregroundColor(backgroundColor)
+            .background(backgroundColor)
+            .foregroundColor(backgroundColor == .white ? .black : .white)
             .cornerRadius(3.0)
         })
     }
