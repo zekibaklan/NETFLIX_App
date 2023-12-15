@@ -12,8 +12,10 @@ struct SearchBar: View {
     @Binding var text : String
     @State private var isEditing = true
     @Binding var isLoading : Bool
+  
     var body: some View {
         
+        var text1 = "default text"
         ZStack(alignment : .leading) {
             Color.graySearchBackground_
                 .frame(width: 270,height: 36)
