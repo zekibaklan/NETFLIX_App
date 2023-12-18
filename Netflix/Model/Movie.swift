@@ -8,7 +8,7 @@
 import Foundation
 
 struct Movie : Identifiable {
-    
+    // commit
     var id : String
     var name :  String
     var thumbnailURL : URL
